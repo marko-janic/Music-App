@@ -1,22 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import { Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import HomeScreen from './components/HomeScreen';
+import LibraryScreen from './components/LibraryScreen';
+import SettingsScreen from './components/SettingsScreen';
+import styles from './AppStyles';
+
+const Tab = createBottomTabNavigator();
 
 export default function App() {
-  console.log("App executed")
-
   return (
-    <SafeAreaView style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </SafeAreaView>
+    <NavigationContainer>
+      <Tab.Navigator screenOptions={{ headerShown: false }}>
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Library" component={LibraryScreen} />
+        <Tab.Screen name="Settings" component={SettingsScreen} />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'dodgerblue',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
