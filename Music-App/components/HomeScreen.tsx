@@ -1,10 +1,11 @@
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import styles from './../AppStyles';
+import MusicList from './MusicList';
 
 const HomeScreen = () => {
     return (
         <View style={styles.container}>
-        <Text>This is the "Home" screen</Text>
+            <MusicList/>
         </View>
     );
 }
