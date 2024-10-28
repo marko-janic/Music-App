@@ -98,11 +98,11 @@ const data: Entry[] = [
 
 const MusicList: React.FC = () => {
   const renderItem: ListRenderItem<Entry> = ({ item }) => (
-    <View style={styles.entryContainer}>
-      <Image source={{ uri: item.imageUrl }} style={styles.entryImage} />
-      <View style={styles.textContainer}>
-        <Text style={styles.title}>{item.title}</Text>
-        <Text style={styles.subtitle}>{item.singer}</Text>
+    <View style={uniqueStyles.entryContainer}>
+      <Image source={{ uri: item.imageUrl }} style={uniqueStyles.entryImage} />
+      <View style={uniqueStyles.textContainer}>
+        <Text style={uniqueStyles.title}>{item.title}</Text>
+        <Text style={uniqueStyles.subtitle}>{item.singer}</Text>
       </View>
     </View>
   );
@@ -112,12 +112,12 @@ const MusicList: React.FC = () => {
       data={data}
       keyExtractor={(item) => item.id}
       renderItem={renderItem}
-      style={styles.flatList}
+      style={uniqueStyles.flatList}
     />
   );
 };
 
-const styles = StyleSheet.create({
+const uniqueStyles = StyleSheet.create({
   entryContainer: {
     flexDirection: 'row',
     flex: 1,

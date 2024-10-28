@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { View, TextInput, TouchableOpacity, Text, StyleSheet } from 'react-native';
-import styles from './../AppStyles';
 
 const VideoSearchHeader = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearch = () => {
-    console.log("Search clicked for ", searchQuery)
+    if (searchQuery) {
+      console.log("Search clicked for ", searchQuery)
+    }
     //setSearchQuery('')
   };
 
